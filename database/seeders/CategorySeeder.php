@@ -15,8 +15,8 @@ class CategorySeeder extends Seeder
     {
         //
         // Category::factory(3)->create();
-        Category::create(['name' => 'Technology', 'slug' => 'technology']);
-        Category::create(['name' => 'Sports', 'slug' => 'sports']);
-        Category::create(['name' => 'Entertainment', 'slug' => 'entertainment']);
+        Category::create(['name' => 'Technology', 'slug' => 'technology', 'color' => 'red']);
+        Category::create(['name' => 'Sports', 'slug' => 'sports', 'color' => 'green']);
+        Category::create(['name' => 'Entertainment', 'slug' => 'entertainment', 'color' => 'blue']);
     }
 }
