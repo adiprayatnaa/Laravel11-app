@@ -20,8 +20,13 @@ Route::get('/about', function () {
 //     return view('home', ['title' => 'Home Page']);
 // });
 Route::get('/posts', function () {
-    $posts = Post::latest()->get();
-    return view('posts', ['title' => 'Blog Page', 'posts' => $posts]);
+    // dump(request('search'));
+    $posts = Post::filter(request(['search', 'category', 'author']))->latest();
+
+    // if (request('search')) {
+    //     $posts = $posts->where('title', 'like', '%' . request('search') . '%');
+    // }
+    return view('posts', ['title' => 'Blog Page', 'posts' => $posts->get()]);
 });
 
 Route::get('/posts/{post:slug}', function (Post $post) {
