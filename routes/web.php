@@ -26,7 +26,7 @@ Route::get('/posts', function () {
     // if (request('search')) {
     //     $posts = $posts->where('title', 'like', '%' . request('search') . '%');
     // }
-    return view('posts', ['title' => 'Blog Page', 'posts' => $posts->get()]);
+    return view('posts', ['title' => 'Blog Page', 'posts' => $posts->paginate(9)->withQueryString()]);
 });
 
 Route::get('/posts/{post:slug}', function (Post $post) {
