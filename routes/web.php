@@ -54,3 +54,11 @@ Route::get('/categories/{category:slug}', function (Category $category) {
     // $posts = $category->posts->load('category', 'author');
     return view('posts', ['title' => count($category->posts) . ' Articles in Category : ' .  $category->name, 'posts' => $category->posts]);
 });
+
+Route::get('/login', function () {
+    return view('login', ['title' => 'Login Page']);
+});
+
+Route::get('/register', function () {
+    return view('register', ['title' => 'Register Page']);
+});

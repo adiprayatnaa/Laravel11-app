@@ -1,0 +1,15 @@
+* [33mcd52415[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mregister-login[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m Pagination
+* [33m4318567[m searching
+* [33ma735ef1[m Redesign UI
+* [33mc7daad9[m N + 1 Problem
+* [33m78f00fb[m Post Category
+* [33m823ecbe[m Eloquent Relationship
+* [33m15fa552[m Model Factories
+* [33md9d70d7[m Eloquent ORM & Post Model
+* [33m999fb42[m Model
+* [33m267c473[m View Data
+* [33mc9ae77f[m Blade Component
+* [33mf1fdc54[m menambahkan tailwindui
+* [33m4ada132[m menambahkan file blog dan contact
+* [33m5435501[m init commit laravel11
+* [33m622cded[m first commit
