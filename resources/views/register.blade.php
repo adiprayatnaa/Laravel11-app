@@ -9,28 +9,30 @@
             <input type="text" id="name" name="name" value="{{ old('name') }}"
                 class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                 placeholder="John Doe" required />
-                @error('name')
+            @error('name')
                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-                @enderror
+            @enderror
         </div>
-        
+
         <div class="mb-5">
-            <label for="username" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Username</label>
+            <label for="username" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                Username</label>
             <input type="text" id="username" name="username" value="{{ old('username') }}"
                 class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                 placeholder="john_doe_123" required />
-                @error('username')
+            @error('username')
                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-                @enderror
+            @enderror
         </div>
         <div class="mb-5">
-            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                email</label>
             <input type="email" id="email" name="email" value="{{ old('email') }}"
                 class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                 placeholder="name@flowbite.com" required />
-                @error('email')
+            @error('email')
                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-                @enderror
+            @enderror
         </div>
         <div class="mb-5">
             <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
@@ -38,9 +40,9 @@
             <input type="password" id="password" name="password"
                 class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                 required />
-                @error('password')
+            @error('password')
                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-                @enderror
+            @enderror
         </div>
         {{-- <div class="mb-5">
             <label for="repeat-password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Repeat
@@ -58,10 +60,10 @@
             <label for="terms" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the <a
                     href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and
                     conditions</a></label>
-        </div> 
+        </div>
         <button type="submit"
-        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register
-        new account</button>
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register
+            new account</button>
     </form>
 
 

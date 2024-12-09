@@ -35,7 +35,7 @@ class RegisterController extends Controller
         // return redirect('/login');
         return redirect('/login')->with('success', 'Your data has been saved successfully!');
 
-            
+
         // return back()->with('success', 'Registration successful!');
         // dd('Registrasi berhasil');
         // return $request->all();
