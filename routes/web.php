@@ -66,10 +66,10 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index', [
-        'title' => 'Dashboard'
-    ]);
-})->middleware('auth');
+// Route::get('/dashboard', function () {
+//     return view('dashboard.index', [
+//         'title' => 'Dashboard'
+//     ]);
+// })->middleware('auth');
 
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');

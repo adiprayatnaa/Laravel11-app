@@ -41,15 +41,15 @@
                             </div>
 
                             <!--
-                                                                                                Dropdown menu, show/hide based on menu state.
+                                                                                                    Dropdown menu, show/hide based on menu state.
 
-                                                                                                Entering: "transition ease-out duration-100"
-                                                                                                  From: "transform opacity-0 scale-95"
-                                                                                                  To: "transform opacity-100 scale-100"
-                                                                                                Leaving: "transition ease-in duration-75"
-                                                                                                  From: "transform opacity-100 scale-100"
-                                                                                                  To: "transform opacity-0 scale-95"
-                                                                                              -->
+                                                                                                    Entering: "transition ease-out duration-100"
+                                                                                                      From: "transform opacity-0 scale-95"
+                                                                                                      To: "transform opacity-100 scale-100"
+                                                                                                    Leaving: "transition ease-in duration-75"
+                                                                                                      From: "transform opacity-100 scale-100"
+                                                                                                      To: "transform opacity-0 scale-95"
+                                                                                                  -->
                             <div x-show="isOpen" x-transition:enter="transition ease-out duration-100 transform"
                                 x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
                                 x-transition:leave="transition ease-in duration-75 transform"
@@ -121,8 +121,8 @@
                         alt="">
                 </div>
                 <div class="ml-3">
-                    <div class="text-base/5 font-medium text-white">Welcome back,{{ auth()->user()->name }} </div>
-                    <div class="text-sm font-medium text-gray-400">{{ auth()->user()->email }}</div>
+                    {{-- <div class="text-base/5 font-medium text-white">Welcome back,{{ auth()->user()->name }} </div>
+                    <div class="text-sm font-medium text-gray-400">{{ auth()->user()->email }}</div> --}}
                 </div>
 
             </div>
