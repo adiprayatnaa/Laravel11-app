@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Category;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class DashboardPostController extends Controller
 {
@@ -22,7 +25,8 @@ class DashboardPostController extends Controller
 
         return view('dashboard.index', [
             'posts' => $post,
-            'title' => 'Dashboard'
+            'title' => 'Dashboard',
+            'categories' => Category::all()
         ]);
     }
 
@@ -32,6 +36,9 @@ class DashboardPostController extends Controller
     public function create()
     {
         //
+        return view('dashboard.create', [
+            'title' => 'Create new Post',
+        ]);
     }
 
     /**
@@ -40,6 +47,8 @@ class DashboardPostController extends Controller
     public function store(Request $request)
     {
         //
+        // dd($request);
+        return $request;
     }
 
     /**
@@ -51,7 +60,8 @@ class DashboardPostController extends Controller
         // dd($post->title);
         return view('dashboard.show', [
             'post' => $post,
-            'title' => 'Post Details'
+            'title' => 'Post Details',
+
         ]);
     }
 
@@ -77,5 +87,26 @@ class DashboardPostController extends Controller
     public function destroy(Post $post)
     {
         //
+    }
+
+    public function checkSlug(Request $request)
+    {
+        //
+        $slug = SlugService::createSlug(Post::class, 'slug', $request->title);
+        return response()->json(['slug' => $slug]);
+        // $title = $request->get('title', '');
+
+        // Generate slug using the model
+        // $slug = Post::make(['title' => $title])->slug;
+
+        // $title = $request->input('title');
+        // $slug = Str::slug($title);
+        //     $slug = Str::slug($request->title);
+
+        //     return response()->json(['slug' => $slug]);
+        // $title = $request->query('title');
+        // $slug = Str::slug($title); // Use Laravel's Str helper to create a slug
+
+        // return response()->json(['slug' => $slug]);
     }
 }

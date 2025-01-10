@@ -9,8 +9,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardPostController;
-
-
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/', function () {
     return view('home', ['title' => 'Home Page']);
@@ -71,5 +70,5 @@ Route::post('/register', [RegisterController::class, 'store']);
 //         'title' => 'Dashboard'
 //     ]);
 // })->middleware('auth');
-
+Route::get('/dashboard/posts/checkSLug', [DashboardPostController::class, 'checkSlug']);
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
