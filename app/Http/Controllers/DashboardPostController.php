@@ -36,9 +36,21 @@ class DashboardPostController extends Controller
     public function create()
     {
         //
-        return view('dashboard.create', [
-            'title' => 'Create new Post',
-        ]);
+        // return view('dashboard.create', [
+        //     'title' => 'Create new Post',
+        // ]);
+        // $validatedData = $request->validate([
+        //     'title' => 'required|min:5|max:255',
+        //     'slug' => 'required|unique:posts',
+        //     'category_id' => 'required',
+        //     'body' => 'required'
+        // ]);
+
+        // $validatedData['user_id'] = Auth::id();
+        // // return $validatedData;
+        // // Post::create($validatedData);
+        // return Post::create($validatedData);
+        // return redirect('/dashboard/posts')->with('success', 'New post has been created');
     }
 
     /**
@@ -48,7 +60,29 @@ class DashboardPostController extends Controller
     {
         //
         // dd($request);
-        return $request;
+        // return $request;
+
+        $validatedData = $request->validate([
+            'title' => 'required|min:5|max:255',
+            'category_id' => 'required',
+            'slug' => 'required|unique:posts',
+            'body' => 'required',
+        ]);
+
+
+        $validatedData['author_id'] = Auth::id();
+
+
+        // if (Auth::check()) {
+        //     // Assign the authenticated user's ID to author_id
+        //     $validatedData['author_id'] = Auth::id();
+        // } else {
+        //     // Handle the case when the user is not authenticated
+        //     return redirect()->back()->withErrors(['error' => 'User not authenticated']);
+        // }
+        // dd("insert berhasil", $validatedData);
+        Post::create($validatedData);
+        return redirect('/dashboard/posts')->with('success', 'New post has been created');
     }
 
     /**
