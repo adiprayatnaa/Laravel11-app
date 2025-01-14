@@ -56,6 +56,13 @@ URL: https://flowbite.com/docs/components/typography/
 
                                 <button type="button"
                                     class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-2 py-0,7 me-1 mb-1 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button>
+
+                                {{-- <form action="/dashboard/posts/{{ $post->slug }}" method="POST">
+                                    @method('delete')
+                                    @csrf
+                                    <Button onclick="return confirm('Are you sure you want to delete this')"
+                                        class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</Button>
+                                </form> --}}
                             </div>
                         </div>
                     </address>

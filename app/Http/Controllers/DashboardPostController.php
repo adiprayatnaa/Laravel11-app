@@ -39,18 +39,7 @@ class DashboardPostController extends Controller
         // return view('dashboard.create', [
         //     'title' => 'Create new Post',
         // ]);
-        // $validatedData = $request->validate([
-        //     'title' => 'required|min:5|max:255',
-        //     'slug' => 'required|unique:posts',
-        //     'category_id' => 'required',
-        //     'body' => 'required'
-        // ]);
 
-        // $validatedData['user_id'] = Auth::id();
-        // // return $validatedData;
-        // // Post::create($validatedData);
-        // return Post::create($validatedData);
-        // return redirect('/dashboard/posts')->with('success', 'New post has been created');
     }
 
     /**
@@ -104,7 +93,10 @@ class DashboardPostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('dashboard.post.edit', [
+            'post' => $post,
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -121,6 +113,8 @@ class DashboardPostController extends Controller
     public function destroy(Post $post)
     {
         //
+        Post::destroy($post->id);
+        return redirect('/dashboard/posts')->with('success', 'Post has been deleted');
     }
 
     public function checkSlug(Request $request)
